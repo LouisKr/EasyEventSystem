@@ -28,11 +28,10 @@ class MausEvent : public Event
 {
 public:
     MausEvent(int x, int y)
-        :Event(EventType::MausEvent)
+        :Event(EventType::MausEvent),
+        x(x),
+        y(y)
     {
-        MausEvent::x = x;
-        MausEvent::y = y;
-
         //call(); //uncomment this if you want your Event to be called automatic
     }
 
