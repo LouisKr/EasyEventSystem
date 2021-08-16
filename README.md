@@ -47,7 +47,7 @@ MEvent.call();
 ```
 
 ## Subscribing to an Event
-You only have to Create an EventHandler in your class and connect your function thats sopposed to react to it.
+You only have to Create an EventHandler in your class and connect your function thats supposed to react to it.
 
 Gui.h
 ```c++
