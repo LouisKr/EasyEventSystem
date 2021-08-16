@@ -12,7 +12,7 @@ class Event
 public:
     Event(EventType type);
 
-    void call();
+    void callEvent();
 
     EventType type;
 };

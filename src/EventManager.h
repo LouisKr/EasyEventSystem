@@ -22,8 +22,6 @@ public:
 
     void callEvent(const Event& event);
 
-    using SlotType = std::function<void(const Event&)>;
-
     void subscribe(EventHandler handler);
     void deSubscribe(EventHandler handler);
 

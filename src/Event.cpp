@@ -5,7 +5,7 @@ Event::Event(EventType type)
     :type(type)
 {}
 
-void Event::call()
+void Event::callEvent()
 {
     EventManager::getInstance().callEvent(*this);
 }
