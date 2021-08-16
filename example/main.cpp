@@ -13,9 +13,7 @@ EventManager& manager = EventManager::getInstance();
 class Gui 
 {
 public:
-    Gui() {}
-
-    void RegForEvent()
+    Gui() 
     {
         //EventHandler MausEventHandler(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent));
         EventHandler MausEventHandler(EventType::MausEvent, std::bind(&Gui::OnButtonPressEvent, this, std::placeholders::_1));
