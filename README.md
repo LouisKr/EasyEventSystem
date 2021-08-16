@@ -5,7 +5,7 @@ I had to realize though that EventSystems often arent as simple and straight for
 Thats why I created my own.
 
 ## Setup
-Just Include the Headers and cpp files from src/ and you are good to go.
+Just Include the Headers and cpp files from "src/" and you are good to go.
 
 ## Creating an Event
 You only have to create your "EventType" and add an entry in the EventType list.
