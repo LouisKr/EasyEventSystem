@@ -6,8 +6,6 @@
 #include <iostream>
 
 
-EventManager& manager = EventManager::getInstance();
-
 #define FUNCTION_OneParam( funkce ) std::bind( (funkce), (this), std::placeholders::_1)
 
 class Gui 
@@ -17,7 +15,7 @@ public:
     {
         //EventHandler MausEventHandler(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent));
         EventHandler MausEventHandler(EventType::MausEvent, std::bind(&Gui::OnButtonPressEvent, this, std::placeholders::_1));
-        manager.deSubscribe(MausEventHandler);
+        EventManager::getInstance().deSubscribe(MausEventHandler);
 
         EventHandler MausEventHandler2(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent2));
 
