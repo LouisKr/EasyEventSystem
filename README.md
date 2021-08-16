@@ -7,7 +7,7 @@ Thats why I created my own.
 ## Setup
 Just Include the Headers and cpp files and you are good to go.
 
-### Creating an Event
+## Creating an Event
 You only have to create your "EventType" and add an entry in the EventType list
 
 Event.h
