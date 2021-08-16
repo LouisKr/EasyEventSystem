@@ -6,12 +6,13 @@ enum class EventType
     ButtonEvent
 };
 
+
 class Event
 {
 public:
-    Event(EventType type)
-        : type (type)
-    {}
+    Event(EventType type);
+
+    void call();
 
     EventType type;
 };
