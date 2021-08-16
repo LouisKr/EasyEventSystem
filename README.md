@@ -8,7 +8,7 @@ Thats why I created my own.
 Just Include the Headers and cpp files and you are good to go.
 
 ## Creating an Event
-You only have to create your "EventType" and add an entry in the EventType list
+You only have to create your "EventType" and add an entry in the EventType list.
 
 Event.h
 ```c++
@@ -45,3 +45,37 @@ Call Event in any Part of your Code
 MausEvent MEvent(23, 12);
 MEvent.call();
 ```
+
+##Subscribing to an Event
+You only have to Create an EventHandler in your class and connect your function thats sopposed to react to it.
+
+Gui.h
+```c++
+#define FUNCTION_OneParam( funkce ) std::bind( (funkce), (this), std::placeholders::_1)
+
+class Gui 
+{
+public:
+    Gui() 
+    {
+        EventHandler MausEventHandler(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent)); 
+        //if you dont want to use macro, use "std::bind(&Gui::OnButtonPressEvent, this, std::placeholders::_1)"
+        manager.deSubscribe(MausEventHandler); //DeSubscribing from an Event
+
+        EventHandler MausEventHandler2(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent2));
+    }
+
+    void OnMausEvent(const Event& event)
+    {
+        const MausEvent& mausEvent = static_cast<const MausEvent&>(event);
+
+        std::cout << "Maus Event! cords:" << mausEvent.x << ":" << mausEvent.y << "\n";
+    }
+
+    void OnMausEvent2(const Event& event)
+    {
+        const MausEvent& mausEvent = static_cast<const MausEvent&>(event);
+
+        std::cout << "Maus Event2! cords:" << mausEvent.x << ":" << mausEvent.y << "\n";
+    }
+}
