@@ -46,7 +46,7 @@ MausEvent MEvent(23, 12);
 MEvent.call();
 ```
 
-##Subscribing to an Event
+## Subscribing to an Event
 You only have to Create an EventHandler in your class and connect your function thats sopposed to react to it.
 
 Gui.h
