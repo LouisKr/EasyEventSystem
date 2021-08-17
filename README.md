@@ -8,7 +8,7 @@ Thats why I created my own.
 Just Include the Headers and cpp files from "src/" and you are good to go.
 
 ## Creating an Event
-You only have to create your "EventType" and add an entry in the EventType list.
+You only have to create your "EventType" and add an entry in the EventType-enum.
 
 Event.h
 ```c++
