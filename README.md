@@ -59,7 +59,7 @@ public:
     {
         EventHandler MausEventHandler(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent)); 
         //if you dont want to use macro, use "std::bind(&Gui::OnMausEvent, this, std::placeholders::_1)"
-        manager.deSubscribe(MausEventHandler); //DeSubscribing from an Event
+        EventManager::getInstance().deSubscribe(MausEventHandler); //DeSubscribing from an Event
 
         EventHandler MausEventHandler2(EventType::MausEvent, FUNCTION_OneParam(&Gui::OnMausEvent2));
     }
@@ -77,4 +77,4 @@ public:
 
         std::cout << "Maus Event2! cords:" << mausEvent.x << ":" << mausEvent.y << "\n";
     }
-}
+};
